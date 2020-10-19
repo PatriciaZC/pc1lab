@@ -1,0 +1,63 @@
+@model pc1lab.Models.Registro
+
+@{
+    ViewData["Title"] = "Registro";
+}
+
+<div class="row">
+    <div class="col-md-4">  
+        <h1 class="display-4">Hecho por Patricia Elizabeth Zambrano Carpio</h1>
+        <form asp-controller="Registro" asp-action="Registrar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>    
+
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>    
+
+            <div class="form-group">
+                <label asp-for="District" class="control-label"></label>
+                <input asp-for="District" class="form-control" />
+                <span asp-validation-for="District" class="text-danger"></span>
+            </div>  
+
+              <label>Banco</label>
+            <select asp-for="Acccion">
+                <option >BCP</option>
+                <option >BBVA Continental</option>
+                <option >Banco de la Nación</option>
+                <option >Scotiabank</option>
+                <option >Caja Arequipa</option>
+            </select>
+            <br/>  
+
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" />
+            </div>  
+
+            <div class="form-group">
+            <input asp-for="genero" type="radio" id="male" name="gender" value="male">
+            <label asp-for="genero" for="male">Male</label><br>
+            <input asp-for="genero" type="radio" id="female" name="gender" value="female">
+            <label asp-for="genero" for="female">Female</label><br>
+            <input asp-for="genero" type="radio" id="other" name="gender" value="other">
+            <label asp-for="genero" for="other">Other</label>      
+            </div>
+
+            <div class="form-group">
+                 <button type="submit" class="btn btn-default">Registrar</button> 
+            </div>                
+
+        </form>
+            
+        <td>@Html.DisplayTextFor(model => model.Response)</td>    
+    
+    </div>
+</div>
